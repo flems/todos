@@ -16,9 +16,12 @@ export default {
 <style lang="scss" scoped>
 .input {
   border: 1px solid $grayLight;
-  padding: 20px;
+  padding: 1.5rem;
   display: block;
   outline: none;
   width: 100%;
+  &::placeholder {
+    font-style: italic;
+  }
 }
 </style>

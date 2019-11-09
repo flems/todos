@@ -35,6 +35,6 @@ export default {};
   font-size: 3rem;
   padding: 1.5rem 0;
   font-weight: 600;
-  text-shadow: 1px 1px 1px #a4a4a4;
+  text-shadow: 1px 1px 1px $grayMedium;
 }
 </style>

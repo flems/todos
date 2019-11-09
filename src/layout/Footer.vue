@@ -29,7 +29,7 @@ export default {};
 .disclaimer {
   text-align: center;
   &__text {
-    color: #a4a4a4;
+    color: $grayMedium;
     font-size: 0.9rem;
   }
 }
