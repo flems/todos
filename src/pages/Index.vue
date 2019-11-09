@@ -2,15 +2,20 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-12">
-        Index page
+        <ProjectList></ProjectList>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import ProjectList from "@/components/ProjectList.vue"
+
 export default {
-  name: "index"
+  name: "index",
+  components: {
+    ProjectList
+  }
 
 };
 </script>
