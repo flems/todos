@@ -1,13 +1,41 @@
 <template lang="html">
-  <header>
-    header
+  <header class="header">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          <span class="logo">todos</span>
+        </div>
+      </div>
+    </div>
   </header>
 </template>
 
 <script>
+import '@/assets/css/bootstrap-grid.min.css'
+import '@/assets/css/normalize.css'
+
 export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
+  @import '@/assets/css/global.scss';
+
+  .header{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 3px 0px rgba(0,0,0,.3);
+    background: #fff;
+    z-index: 10;
+  }
+  .logo{
+    display: inline-block;
+    color: #f1f1f1;
+    font-size: 3rem;
+    padding: 1.5rem 0;
+    font-weight: 600;
+    text-shadow: 1px 1px 1px #a4a4a4;
+  }
 </style>
