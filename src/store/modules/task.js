@@ -29,6 +29,16 @@ export default {
     deleteTask: function(state, id) {
       const index = state.list.findIndex(task => task.id === id);
       state.list.splice(index, 1);
+    },
+    addTask: function(state, data) {
+      const lastId = state.list[state.list.length - 1].id;
+      const newTask = {
+        id: lastId + 1,
+        completed: false,
+        parent: data.get("parent"),
+        name: data.get("task")
+      };
+      state.list.push(newTask);
     }
   },
   actions: {
@@ -39,6 +49,16 @@ export default {
     deleteTask: function({ commit }, id) {
       //запись в cookie или отправка на сервер
       commit("deleteTask", id);
+    },
+    addTask: function({ commit }, e) {
+      const form = e.target;
+      const formData = new FormData(form);
+      const taskName = formData.get("task");
+      form.reset();
+      if (taskName !== "") {
+        //запись в cookie или отправка на сервер
+        commit("addTask", formData);
+      }
     }
   },
   modules: {}

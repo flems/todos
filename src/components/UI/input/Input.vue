@@ -1,14 +1,26 @@
 <template>
-  <input class="input" type="text" :name="name" :placeholder="placeholder" />
+  <input class="input" :type="type" :name="name" :placeholder="placeholder" :value="value"/>
 </template>
 
 <script>
 export default {
   props: {
     name: {
-      type: String
+      type: String,
+      default: "",
     },
-    placeholder: String
+    placeholder: {
+      type: String,
+      default: "",
+    },
+    type: {
+      type: String,
+      default: 'text'
+    },
+    value: {
+      type: [String, Number],
+      default: "",
+    }
   }
 };
 </script>

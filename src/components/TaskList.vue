@@ -1,7 +1,10 @@
 <template>
   <div class="task-card">
     <div class="task-card__header">
-      <UiInput name="task" placeholder="Добавить задачу"></UiInput>
+      <form class="add-task" @submit.prevent="addTask">
+        <UiInput name="parent" type="hidden" :value="1"></UiInput>
+        <UiInput name="task" type="text" placeholder="Добавить задачу"></UiInput>
+      </form>
     </div>
     <div class="task-card__content">
       <Task
@@ -32,7 +35,8 @@ export default {
   methods: {
     ...mapActions([
       'changeTaskStatus',
-      'deleteTask'
+      'deleteTask',
+      'addTask'
     ])
   },
   components: {
