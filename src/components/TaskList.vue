@@ -1,10 +1,19 @@
 <template>
   <div class="task-card">
     <div class="task-card__header">
-      <UiInput name="task" placeholder="Новая задача"></UiInput>
+      <UiInput name="task" placeholder="Добавить задачу"></UiInput>
     </div>
     <div class="task-card__content">
-      <Task text="Новая задача"></Task>
+      <Task
+        v-for="item in taskList"
+        :key="item.id"
+        :text="item.name"
+        :completed="item.completed"
+        :id="item.id"
+        @changeStatus="changeTaskStatus"
+        @deleteTask="deleteTask"
+      >
+      </Task>
     </div>
   </div>
 </template>
@@ -12,8 +21,20 @@
 <script>
 import { UiInput } from "@/components/UI/index.js";
 import Task from "@/components/Task.vue";
+import { mapState, mapActions } from "vuex";
 
 export default {
+  computed: {
+    ...mapState({
+      taskList: state => state.task.list
+    })
+  },
+  methods: {
+    ...mapActions([
+      'changeTaskStatus',
+      'deleteTask'
+    ])
+  },
   components: {
     UiInput,
     Task
