@@ -54,12 +54,11 @@ export default {
       const form = e.target;
       const formData = new FormData(form);
       const taskName = formData.get("task");
-      form.reset();
       if (taskName !== "") {
         //запись в cookie или отправка на сервер
         commit("addTask", formData);
+        form.reset();
       }
     }
-  },
-  modules: {}
+  }
 };
