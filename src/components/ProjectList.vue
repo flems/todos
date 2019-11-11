@@ -2,7 +2,9 @@
   <div class="projects">
     <div class="projects__list">
       <div class="projects__item" v-for="item in projects" :key="item.id">
-        <p class="projects__title">{{ item.name }}</p>
+        <router-link :to="{ name: 'project', params: { id: item.id } }" class="projects__link">
+          <p class="projects__title">{{ item.name }}</p>
+        </router-link>
       </div>
       <slot></slot>
     </div>
@@ -31,19 +33,25 @@ export default {
   &__item {
     width: 200px;
     margin: 1rem;
-    padding: 2rem;
     background: #fff;
     box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
     cursor: pointer;
-    min-height: 86px;
+
   }
-  &__title{
+  &__title {
     font-size: 1.5rem;
     font-weight: 600;
     color: $grayMedium;
     text-transform: uppercase;
     text-align: center;
     margin: 0;
+  }
+  &__link {
+    min-height: 86px;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 
