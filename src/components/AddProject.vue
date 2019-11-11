@@ -4,7 +4,7 @@
       <PlusIcon></PlusIcon>
     </div>
     <form class="add-project__form" @submit.prevent="addProject">
-      <UiInput name="project" placeholder="Название проекта"></UiInput>
+      <UiInput className="add-project__input" ref="add-project-input" name="project" placeholder="Название проекта"></UiInput>
     </form>
   </div>
 </template>
@@ -23,6 +23,10 @@ export default {
   methods: {
     setFormState () {
       this.isActive = !this.isActive;
+      this.setFocus();
+    },
+    setFocus () {
+      this.$refs['add-project-input'].$el.focus();
     },
     ...mapActions([
       'addProject'
@@ -42,10 +46,12 @@ export default {
     box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
     cursor: pointer;
     margin: 1rem;
+    overflow: hidden;
     &_active {
       .add-project {
         &__form {
-          display: block;
+          opacity: 1;
+          position: static;
         }
         &__icon{
           svg {
@@ -72,7 +78,14 @@ export default {
       }
     }
     &__form {
-      display: none;
+      opacity: 0;
+      position: absolute;
+      top: 100%;
+      left: 100%;
+    }
+    &__input {
+      border: none;
+      box-shadow: inset 0px 1px 5px -3px rgb(164, 164, 164);
     }
   }
 </style>

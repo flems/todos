@@ -1,5 +1,5 @@
 <template>
-  <input class="input" :type="type" :name="name" :placeholder="placeholder" :value="value"/>
+  <input :class="[className, 'input']" :type="type" :name="name" :placeholder="placeholder" :value="value" autocomplete="off"/>
 </template>
 
 <script>
@@ -20,7 +20,11 @@ export default {
     value: {
       type: [String, Number],
       default: "",
-    }
+    },
+    className: {
+      type: [String, Number],
+      default: "",
+    },
   }
 };
 </script>
