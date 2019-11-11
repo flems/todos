@@ -47,6 +47,7 @@ export default {
     cursor: pointer;
     margin: 1rem;
     overflow: hidden;
+    position: relative;
     &_active {
       .add-project {
         &__form {
