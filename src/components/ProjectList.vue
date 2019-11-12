@@ -29,10 +29,12 @@ export default {
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
+    margin-left: -1rem;
+    margin-right: -1rem;
   }
   &__item {
     width: 200px;
-    margin: 1rem;
+    margin: 0 1rem 1rem;
     background: #fff;
     box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
     cursor: pointer;

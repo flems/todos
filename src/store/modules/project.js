@@ -13,9 +13,14 @@ export default {
   },
   mutations: {
     addProject: function(state, data) {
-      const lastId = state.list[state.list.length - 1].id;
+      let id;
+      if (state.list.length > 0) {
+        id = state.list[state.list.length - 1].id + 1;
+      } else {
+        id = 1;
+      }
       const newProject = {
-        id: lastId + 1,
+        id: id + 1,
         name: data.get("project")
       };
       state.list.push(newProject);

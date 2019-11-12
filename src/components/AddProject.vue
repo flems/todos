@@ -45,7 +45,7 @@ export default {
     width: 200px;
     box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
     cursor: pointer;
-    margin: 1rem;
+    margin: 0 1rem 1rem;
     overflow: hidden;
     position: relative;
     &_active {

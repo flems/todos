@@ -4,7 +4,7 @@
       <div class="row">
         <div class="col-12">
           <div class="disclaimer">
-            <p class="disclaimer__text">Double-click to edit task</p>
+            <p class="disclaimer__text">todos &copy; 2019</p>
           </div>
         </div>
       </div>

@@ -3,6 +3,7 @@
     <div class="row">
       <div class="col-md-12">
         <div class="project-list">
+          <UiTitle title="Список проектов" :center="true" :white="false"></UiTitle>
           <ProjectList>
             <AddProject></AddProject>
           </ProjectList>
@@ -15,13 +16,15 @@
 <script>
 import ProjectList from "@/components/ProjectList.vue"
 import AddProject from "@/components/AddProject.vue";
+import { UiTitle } from "@/components/UI/index.js";
 
 
 export default {
   name: "index",
   components: {
     ProjectList,
-    AddProject
+    AddProject,
+    UiTitle
   }
 
 };
@@ -29,6 +32,6 @@ export default {
 
 <style lang="scss">
   .project-list {
-    padding: 2rem 0;
+    margin: 2rem 0;
   }
 </style>
