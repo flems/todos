@@ -1,15 +1,8 @@
+import { saveToLocalStorage } from "@/utils/saveToLocalStorage.js";
+
 export default {
   state: {
-    list: [
-      {
-        id: 1,
-        name: "Проект 1"
-      },
-      {
-        id: 2,
-        name: "Проект 2"
-      }
-    ]
+    list: JSON.parse(localStorage.getItem("projects") || "[]")
   },
   mutations: {
     addProject: function(state, data) {
@@ -24,6 +17,7 @@ export default {
         name: data.get("project")
       };
       state.list.push(newProject);
+      saveToLocalStorage("projects", JSON.stringify(state.list));
     }
   },
   actions: {
@@ -32,7 +26,7 @@ export default {
       const formData = new FormData(form);
       const projectName = formData.get("project");
       if (projectName !== "") {
-        //запись в cookie или отправка на сервер
+        //отправка на сервер
         commit("addProject", formData);
         form.reset();
       }

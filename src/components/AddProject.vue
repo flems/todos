@@ -48,6 +48,7 @@ export default {
     margin: 0 1rem 1rem;
     overflow: hidden;
     position: relative;
+    align-self: center;
     &_active {
       .add-project {
         &__form {
