@@ -3,7 +3,9 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-12">
-          <span class="logo">todos</span>
+          <router-link :to="{ path: '/' }">
+            <span class="logo">todos</span>
+          </router-link>
         </div>
       </div>
     </div>
