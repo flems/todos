@@ -31,9 +31,14 @@ export default {
       state.list.splice(index, 1);
     },
     addTask: function(state, data) {
-      const lastId = state.list[state.list.length - 1].id;
+      let id;
+      if (state.list.length > 0) {
+        id = state.list[state.list.length - 1].id + 1;
+      } else {
+        id = 1;
+      }
       const newTask = {
-        id: lastId + 1,
+        id: id,
         completed: false,
         parent: data.get("parent"),
         name: data.get("task")
